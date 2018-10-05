@@ -6,6 +6,7 @@ var sala = params.get('sala');
 
 // referencias de jQuery
 var divUsuarios = $('#divUsuarios');
+var divchat = $('#nombrechat');
 var formEnviar = $('#formEnviar');
 var txtMensaje = $('#txtMensaje');
 var divChatbox = $('#divChatbox');
@@ -15,6 +16,9 @@ var divChatbox = $('#divChatbox');
 function renderizarUsuarios(personas) { // [{},{},{}]
 
     console.log(personas);
+    var nombrechat = '';
+    nombrechat += '' + params.get('sala') + '';
+    divchat.html(nombrechat);
 
     var html = '';
 
@@ -50,7 +54,7 @@ function renderizarMensajes(mensaje, yo) {
         html += '    <div class="chat-content">';
         html += '        <h5>' + mensaje[0].nombre + "\n" + '</h5>';
         html += '        <div class="box bg-light-inverse">' + mensaje[0].mensaje + '</div><br>';
-        html += '        <div class="box" style="background-color: red; color: white">' + mensaje[1].mensaje + '</div>';
+        //html += '        <div class="box" style="background-color: #A23E48; color: white;">' + mensaje[1].mensaje + '</div>';
         html += '    </div>';
         html += '    <div class="chat-img"><img src="assets/images/users/5.jpg" alt="user" /></div>';
         html += '    <div class="chat-time">' + hora + '</div>';
@@ -67,7 +71,7 @@ function renderizarMensajes(mensaje, yo) {
         html += '    <div class="chat-content">';
         html += '        <h5>' + mensaje[0].nombre + "\n" + '</h5>';
         html += '        <div class="box bg-light-' + adminClass + '">' + mensaje[0].mensaje + '</div><br>';
-        html += '        <div class="box" style="background-color: red; color: white">' + mensaje[1].mensaje + '</div>';
+        //html += '        <div class="box" style="background-color: red; color: white">' + mensaje[1].mensaje + '</div>';
         html += '    </div>';
         html += '    <div class="chat-time">' + hora + '</div>';
         html += '</li>';
